@@ -1,0 +1,51 @@
+<!-- header.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add your custom CSS styles here */
+        .bg-orange {
+            background-color: rgba(255, 21, 0, 0.587); /* You can replace 'peach' with the desired color */
+        }
+        body {
+            padding-top: 70px; /* Adjust the value based on your menu bar's height */
+        }
+        .navbar-nav .nav-link {
+            font-size: 20px; /* Adjust the font size as needed */
+        }
+    </style>
+    <title>{% block title %}My Website{% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-orange fixed-top">
+        <a class="navbar-brand" href="/">
+            <!-- Replace the text with an image tag if using a logo -->
+            <img src="static/logo1.jpeg" alt="Logo" height="70">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item {% if active_page == 'about' %}active{% endif %}">
+                    <a class="nav-link" href="/about">About Me</a>
+                </li>
+                <li class="nav-item {% if active_page == 'sketches' %}active{% endif %}">
+                    <a class="nav-link" href="/sketches">My Sketches</a>
+                </li>
+                <li class="nav-item {% if active_page == 'blog' %}active{% endif %}">
+                    <a class="nav-link" href="/blog">My Blog</a>
+                </li>
+                <li class="nav-item {% if active_page == 'projects' %}active{% endif %}">
+                    <a class="nav-link" href="/projects">My Projects</a>
+                </li>
+                <li class="nav-item {% if active_page == 'contact' %}active{% endif %}">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
